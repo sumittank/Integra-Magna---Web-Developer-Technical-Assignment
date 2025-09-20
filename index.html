@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f9f6f1; /* Light beige background like in screenshot */
+    }
+
+    /* Navbar container */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background: #D8d1cb;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* Logo Section */
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Menu */
+    .menu {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #c97a40; /* gold-brown hover */
+    }
+
+    /* Auth buttons */
+    .auth {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .auth a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .auth .signup {
+      background: #000;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .auth .signup:hover {
+      background: #333;
+    }
+
+    .left {
+      width: 50%;
+      height: 100vh;
+      background-color: #f9f3ee;
+      float: left;
+    }
+    .right {
+      width: 50%;
+      height: 100vh;
+      background-color: #f9f3ee;
+      float: right;
+    }
+    .unlock {
+      color: #c97a40;
+      font-size: 70px;
+      margin-top: 30px;
+      margin-left: 20px;
+      font-style: italic;
+    }
+    .hero-des {
+  background: linear-gradient(135deg, 
+    hsl(250, 70%, 36%), 
+    hsl(100, 20%, 59%), 
+    hsl(200, 66%, 50%)
+  );
+  margin-left: 20px;
+  font-size: 70px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+.cards {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .card {
+      width: 200px;
+      background: #D8d1cb;
+      border-radius: 100px 100px 0px 0px; /* Rounded top arch */
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px 0px 0px 0px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .price {
+    background-color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+      color: #c97a40; /* golden brown */
+      border-radius: 50px 50px 0px 0px;
+      padding: 10px;
+    }
+    .stone {
+    margin-top: 20px;
+    margin-left: 5px;
+    height: 230px;
+    width: 330px;
+}
+
+.hand {
+  margin-top: -230px;  /* move hand up */
+    margin-left: 200px;
+    margin-right: -300px;
+    /* move closer to stone */
+  width: 550px; 
+  height: 650px;
+  /* bigger hand */
+  
+}
+
+.barcode {
+     /* move barcode up */
+    position:absolute;
+    margin-top: -135px;
+    height: 100px;
+    margin-left: 320px;
+}
+.footer {
+  background: #D8d1cb;   /* light beige background like your image */
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  bottom: -150px;
+  position: absolute;
+  display: flex;
+  /* margin-left: 300px; */
+  width: 100%;
+
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;   /* spacing between text & icons */
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-left: 300px;
+}
+
+.footer-links .star {
+  font-size: 14px;
+  color: #c1a87d; /* golden tone for star */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assests\star.png" alt="Logo" >
+    </div>
+
+    <!-- Menu -->
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Marketplace</a>
+      <a href="#">Artist</a>
+      <a href="#">Community</a>
+
+      <div class="auth">
+      <a href="#" class="signup">Sign up</a>
+      <span class="">|</span>
+      <a href="#">Login</a>
+    </div>
+
+</div>
+    
+  </nav>
+  <div class="mainn">
+      <div class="left">
+        <div class="unlock">Unlock</div>
+        <div class="hero-des">The Digital</div>
+        <div class="hero-des">Renaissance</div>
+        <div class="hero-para" style="margin-left: 20px; margin-top: 20px; font-size: 20px; color: #555;">
+            <p>Join the revolution, embrace the digital revolution, and 
+
+            </p>
+            <p>become a part 
+          of the ever-evolving NFT ecosystem.</p>
+        </div>
+        <div>
+             <div class="cards">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="assests/beer.png" alt="Bear">
+      <h3>Bear</h3>
+      <p>by Andrew Garf</p>
+      <div class="price">40$</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="assests/Lion.png" alt="Lion">
+      <h3>Lion</h3>
+      <p>by Jen Stark</p>
+      <div class="price">80$</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="assests/Cat.png" alt="Cats">
+      <h3>Cats</h3>
+      <p>by Casey Reas</p>
+      <div class="price">120$</div>
+    </div>
+  </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="">
+            <img src="assests/stone.png" alt="" class="stone">
+        </div>
+        <div class="">
+            <img src="assests/hand.png" alt="" class="hand">
+        </div>
+        <div class="">
+            <img src="assests/Barcode.png" alt="" class="barcode">
+        </div>
+    </div>
+  </div>
+
+    <footer class="footer">
+  <div class="footer-links">
+    <span>Join the Revolution</span>
+    <span class="star">✦</span>
+    <span>Future is Here</span>
+    <span class="star">✦</span>
+    <span>NFT World</span>
+    <span class="star">✦</span>
+    <span>Rule the Game</span>
+    <span class="star">✦</span>
+    <span>We Are NFT</span>
+  </div>
+</footer>
+
+
+</body>
+</html>
